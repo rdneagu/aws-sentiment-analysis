@@ -1,0 +1,28 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "DynamoDB Table Create",
+    "Resources": {
+        "DDBTABLE": {
+            "Type": "AWS::DynamoDB::Table",
+            "Properties": {
+                "TableName": "cw-ddb-1703130",
+                "AttributeDefinitions": [
+                    {
+                        "AttributeName": "AudioFilename",
+                        "AttributeType": "S"
+                    }
+                ],
+                "KeySchema": [
+                    {
+                        "AttributeName": "AudioFilename",
+                        "KeyType": "HASH"
+                    }
+                ],
+                "ProvisionedThroughput": {
+                    "ReadCapacityUnits": 5,
+                    "WriteCapacityUnits": 5
+                }
+            }
+        }
+    }
+}
